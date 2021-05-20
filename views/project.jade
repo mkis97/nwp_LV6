@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    form(action='/projects' method='post')
+        p Name
+            input(type='text', name='name' value=project.name)
+        p Description
+            input(type='text', name='description' value=project.description)
+        p Price
+            input(type='number', name='price' value=project.price)
+        p Note
+            textarea(name='note')= project.note
+        p Start date
+            input(type='date', name='start' value=project.start)
+        p End date
+            input(type='date', name='end' value=project.end)
+            input(type='hidden' name='id' value=project.id)
+        p
+            input(type='submit' name='submit' value='Save')
+
+    section
+    if project.members
+        h2 Members
+        each member in project.members
+            li=member

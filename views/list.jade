@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    table
+        tr
+            th Name
+            th Description
+            th Price
+            th Start date
+            th End date
+            th -
+        each project, index in projects
+            tr
+                td= project.name
+                td= project.description
+                td= project.price
+                td= project.start
+                td= project.end
+                td
+                    a(href='/projects/edit/'+project._id) Edit
+                    br
+                    a(href='/projects/delete/'+project._id) Delete
+                    br
+                    a(href='/projects/member-addition/'+project._id) Add member
