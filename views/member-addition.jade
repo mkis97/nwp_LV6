@@ -2,6 +2,8 @@ extends layout
 
 block content
     form(action='/projects/member-addition' method='post')
-        input(type='text' name='member')
+        select(name='member' multiple=true)
+            each singleUser in users
+                option(value=singleUser.id)= singleUser.name
         input(type='hidden' name='id' value=project.id)
         input(type='submit' value='Save')

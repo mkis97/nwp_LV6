@@ -17,8 +17,16 @@ block content
                 td= project.start
                 td= project.end
                 td
-                    a(href='/projects/edit/'+project._id) Edit
+                    if isLeader
+                        a(href='/projects/delete/'+project._id) Delete
+                        br
+                    if isLeader
+                        a(href='/projects/member-addition/' + project._id) Add member
+                        br
+                    if isLeader
+                        a(href='/projects/archive/' + project._id) Archive
                     br
-                    a(href='/projects/delete/'+project._id) Delete
-                    br
-                    a(href='/projects/member-addition/'+project._id) Add member
+                    a(href='/projects/edit/' + project._id) Edit
+
+
+

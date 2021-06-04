@@ -10,6 +10,7 @@ var projectsRouter = require('./routes/projects');
 
 require('./model/db')
 require('./model/projects')
+require('./model/users')
 
 var app = express();
 
@@ -42,7 +43,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen(3000)
 
 module.exports = app;

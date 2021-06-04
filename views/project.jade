@@ -19,6 +19,9 @@ block content
             input(type='submit' name='submit' value='Save')
 
     section
+    if project.leader
+        h2 Leader
+        p= project.leader.name
     if project.members
         h2 Members
         each member in project.members

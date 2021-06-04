@@ -1,11 +1,23 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    nav
-      a(href='/projects/create') Add
-      br
-      a(href='/projects') List
-    block content
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        nav
+            a(href='/projects/create') Add
+            br
+            a(href='/projects?leader=true&archive=false') List
+            br
+            a(href='/') Home
+            br
+            a(href='/projects/create') Create
+            br
+            a(href='/projects?leader=true&archive=false') Leaders list
+            br
+            a(href='/projects?leader=false&archive=false') Members list
+            br
+            a(href='/projects?leader=true&archive=true') Leader archive
+            br
+            a(href='/projects?leader=false&archive=true') Member archive
+        block content
